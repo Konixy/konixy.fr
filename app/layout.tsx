@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export const metadata: Metadata = {
   title: "Home page - Konixy",
@@ -21,6 +22,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="m-4">
+            <ThemeToggle />
+          </div>
           {children}
         </ThemeProvider>
       </body>
