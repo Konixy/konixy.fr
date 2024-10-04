@@ -1,32 +1,20 @@
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import type { Metadata } from 'next';
+import './globals.css';
+import Navbar from '@/components/navbar';
 
 export const metadata: Metadata = {
-  title: "Home page - Konixy",
-  description: "My website",
+  title: 'Konixy',
+  description: "Hi i'm Konixy!",
+  icons: '/favicon.ico',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="m-4">
-            <ThemeToggle />
-          </div>
-          {children}
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className="h-screen overflow-hidden">
+        <Navbar />
+        {children}
       </body>
     </html>
   );
