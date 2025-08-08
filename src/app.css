@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: 'Merriweather', serif;
+
+	--color-background: oklch(0.9837 0.043 100.62);
+	--color-foreground: oklch(0.2897 0.043 100.62);
+	--color-primary-100: oklch(0.8045 0.0694 230.8);
+	--color-primary-200: oklch(0.6756 0.0722 248.94);
+	--color-primary-300: oklch(0.5826 0.0867 239.13);
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+}
