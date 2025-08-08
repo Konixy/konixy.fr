@@ -219,7 +219,7 @@ onDestroy(() => {
 
 <div
 	bind:this={container}
-	class="font-sans text-6xl"
+	class="text-center font-sans text-6xl select-none"
 	role="heading"
 	aria-level="1"
 	aria-label={text}
