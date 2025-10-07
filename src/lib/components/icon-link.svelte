@@ -12,7 +12,7 @@ let {
 	{href}
 	target="_blank"
 	class={cn(
-		'bg-foreground/5 hover:bg-foreground/10 text-foreground rounded-xl p-2 text-center text-xl transition-all',
+		'[&_path]:fill-foreground/50 hover:[&_path]:fill-foreground text-center transition-all [&_path]:transition-all',
 		className
 	)}
 >

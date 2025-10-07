@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-motion';
 
 @theme {
-	--font-sans: 'Merriweather', serif;
+	--font-sans: 'Figtree', sans-serif;
+	--font-title: 'Ramabhadra', var(--font-sans);
 
-	--color-background: oklch(0.9837 0.043 100.62);
-	--color-foreground: oklch(0.2897 0.043 100.62);
-	--color-primary-100: oklch(0.8045 0.0694 230.8);
-	--color-primary-200: oklch(0.6756 0.0722 248.94);
-	--color-primary-300: oklch(0.5826 0.0867 239.13);
+	--color-background: oklch(0.1236 0.0439 248.95);
+	--color-foreground: oklch(0.9191 0.0439 248.95);
 }
 
 body {
 	background-color: var(--color-background);
 	color: var(--color-foreground);
+	font-family: var(--font-sans);
 }
