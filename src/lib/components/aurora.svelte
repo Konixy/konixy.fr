@@ -4,8 +4,6 @@ import { sineInOut } from 'svelte/easing';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const VERT = `#version 300 es
 in vec2 position;
 void main() {
@@ -140,6 +138,7 @@ let scrollState = $state(
 $effect(() => {
 	const ctn = ctnDom;
 	if (!ctn) return;
+	gsap.registerPlugin(ScrollTrigger);
 
 	const renderer = new Renderer({
 		alpha: true,
@@ -253,4 +252,20 @@ $effect(() => {
 });
 </script>
 
-<div bind:this={ctnDom} class="fixed inset-0 -z-10 h-full w-full"></div>
+<div bind:this={ctnDom} class="aurora fixed inset-0 -z-10 h-full w-full"></div>
+
+<style>
+.aurora::before {
+	content: '';
+	background-color: transparent;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+	background-repeat: repeat;
+	background-size: 182px;
+	opacity: 0.15;
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+</style>

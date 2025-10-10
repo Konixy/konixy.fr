@@ -6,24 +6,22 @@ import {
 	XformerlyTwitterLogo
 } from '@selemondev/svgl-svelte';
 import Link from '$lib/components/icon-link.svelte';
-import Aurora from '$lib/components/aurora.svelte';
 import Button from '$lib/components/button.svelte';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { onMount } from 'svelte';
 import Bento from './bento.svelte';
 import type { PageData } from './$types';
 
 let { data }: { data: PageData } = $props();
 
-gsap.registerPlugin(ScrollTrigger);
-
 let heroSection: HTMLDivElement | null = $state(null);
 
-onMount(() => {
+$effect(() => {
 	// Initial animation on page load
 	const ctx = gsap.context(() => {
 		if (!heroSection) return;
+		heroSection.classList.add('opacity-100');
+
 		// Animate all children elements with a stagger
 		gsap.from(heroSection.children, {
 			y: 30,
@@ -54,7 +52,7 @@ onMount(() => {
 
 <div
 	bind:this={heroSection}
-	class="flex h-screen flex-col items-center justify-center gap-10 text-center"
+	class="flex h-screen flex-col items-center justify-center gap-10 text-center opacity-0"
 >
 	<div class="pointer-events-none relative h-16 w-16 overflow-hidden rounded-full">
 		<img src="/me.jpeg" alt="Anatole Dufour" class="absolute inset-0 h-full w-full object-cover" />
@@ -86,4 +84,4 @@ onMount(() => {
 	</div>
 </div>
 
-<!-- <Bento repoCount={data.repoCount} /> -->
+<Bento repoCount={data.repoCount} />

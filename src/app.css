@@ -8,7 +8,7 @@
 	--font-sans: 'Figtree', sans-serif;
 	--font-title: 'Ramabhadra', var(--font-sans);
 
-	--color-background: oklch(0.1236 0.0439 248.95);
+	--color-background: oklch(0.0936 0.0331 248.95);
 	--color-foreground: oklch(0.9191 0.0439 248.95);
 }
 

@@ -1,12 +1,9 @@
 <script lang="ts">
 import ArrowRight from '@tabler/icons-svelte/icons/arrow-right';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { onMount } from 'svelte';
 
 let { repoCount }: { repoCount: number } = $props();
-
-gsap.registerPlugin(ScrollTrigger);
 
 let bentoSection: HTMLDivElement | null = $state(null);
 let headerSection: HTMLDivElement | null = $state(null);
@@ -177,7 +174,7 @@ onMount(() => {
 			href="https://github.com/Konixy?tab=repositories"
 			target="_blank"
 		>
-			View {repoCount} more projects on my GitHub
+			View {repoCount - projects.length} more projects on my GitHub
 			<ArrowRight class="size-4 transition-all group-hover:translate-x-1" />
 		</a>
 	</div>
