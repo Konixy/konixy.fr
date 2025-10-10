@@ -84,7 +84,7 @@ onMount(() => {
 		if (!bentoSection || !headerSection || !gridContainer || !footerLink) return;
 
 		// Animate header section
-		gsap.from(headerSection.children, {
+		gsap.from(headerSection, {
 			y: 30,
 			opacity: 0,
 			duration: 1,
@@ -142,10 +142,9 @@ onMount(() => {
 });
 </script>
 
-<div bind:this={bentoSection} class="flex h-full flex-col items-center justify-center gap-10">
-	<div bind:this={headerSection} class="flex flex-col gap-4 text-center">
-		<div class="text-foreground text-xl font-bold">Projects</div>
-		<p class="text-foreground/60 text-sm">Here are some of the projects I've worked on.</p>
+<div bind:this={bentoSection} class="mb-20 flex h-full flex-col items-center justify-center gap-10">
+	<div bind:this={headerSection} class="text-foreground text-center text-xl font-bold">
+		Projects
 	</div>
 	<div
 		bind:this={gridContainer}
@@ -170,7 +169,7 @@ onMount(() => {
 
 	<div bind:this={footerLink} class="flex items-center">
 		<a
-			class="group text-foreground/60 hover:text-foreground flex items-center gap-1 transition-all"
+			class="group text-foreground/40 hover:text-foreground/80 flex items-center gap-1 transition-all"
 			href="https://github.com/Konixy?tab=repositories"
 			target="_blank"
 		>

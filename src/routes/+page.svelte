@@ -57,7 +57,7 @@ $effect(() => {
 	<div class="pointer-events-none relative h-16 w-16 overflow-hidden rounded-full">
 		<img src="/me.jpeg" alt="Anatole Dufour" class="absolute inset-0 h-full w-full object-cover" />
 	</div>
-	<div class="font-title text-5xl font-bold sm:text-6xl">Anatole Dufour</div>
+	<div class="font-title text-5xl font-bold tracking-normal sm:text-6xl">Anatole Dufour</div>
 	<div class="motion text-foreground/60 flex flex-row items-center gap-2 text-xl font-light">
 		<p>18'</p>
 		⸱

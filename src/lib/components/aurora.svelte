@@ -158,8 +158,9 @@ $effect(() => {
 		const width = ctn.offsetWidth;
 		const height = ctn.offsetHeight;
 		renderer.setSize(width, height);
+		const responsiveWidth = width > 768 ? width : width * 2;
 		if (program) {
-			program.uniforms.uResolution.value = [width, height];
+			program.uniforms.uResolution.value = [responsiveWidth, height];
 		}
 	}
 	window.addEventListener('resize', resize);
