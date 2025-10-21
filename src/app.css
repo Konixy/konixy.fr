@@ -10,6 +10,20 @@
 
 	--color-background: oklch(0.0936 0.0331 248.95);
 	--color-foreground: oklch(0.9191 0.0439 248.95);
+
+	--color-svelte: #ff3e00;
+	--color-tailwindcss: #38bdf8;
+	--color-typescript: #3074bf;
+	--color-prisma: #54b8af;
+	--color-mongodb: #47a248;
+	--color-docker: #2592e6;
+	--color-linux: #f1faee;
+	--color-arch-linux: #1793d1;
+	--color-nextjs: #f0f0f0f0;
+	--color-react: #61dafb;
+	--color-graphql: #e10098;
+	--color-css: #2a65f1;
+	--color-golang: #00add8;
 }
 
 body {

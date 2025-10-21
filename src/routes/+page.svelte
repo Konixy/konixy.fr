@@ -1,16 +1,14 @@
 <script lang="ts">
-import {
-	GitHubLogo,
-	InstagramLogo,
-	LinkedInLogo,
-	XformerlyTwitterLogo
-} from '@selemondev/svgl-svelte';
+import { SiGithub, SiInstagram, SiX } from '@icons-pack/svelte-simple-icons';
 import Link from '$lib/components/icon-link.svelte';
 import Button from '$lib/components/button.svelte';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Bento from './bento.svelte';
+import Projects from './projects.svelte';
 import type { PageData } from './$types';
+import { IconChevronsDown } from '@tabler/icons-svelte';
+import LinkedinLogo from '$lib/components/linkedin-logo.svelte';
+import confetti from 'canvas-confetti';
+import Download from '@tabler/icons-svelte/icons/download';
 
 let { data }: { data: PageData } = $props();
 
@@ -48,13 +46,22 @@ $effect(() => {
 
 	return () => ctx.revert();
 });
+
+function onclick() {
+	window.open('/CV.pdf', '_blank');
+	confetti({
+		particleCount: 100,
+		spread: 70,
+		origin: { y: 0.6 }
+	});
+}
 </script>
 
 <div
 	bind:this={heroSection}
-	class="flex h-screen flex-col items-center justify-center gap-10 text-center opacity-0"
+	class="relative flex h-screen flex-col items-center justify-center gap-10 text-center opacity-0"
 >
-	<div class="pointer-events-none relative h-16 w-16 overflow-hidden rounded-full">
+	<div class="pointer-events-none relative size-16 overflow-hidden rounded-full">
 		<img src="/me.jpeg" alt="Anatole Dufour" class="absolute inset-0 h-full w-full object-cover" />
 	</div>
 	<div class="font-title text-5xl font-bold tracking-normal sm:text-6xl">Anatole Dufour</div>
@@ -66,22 +73,39 @@ $effect(() => {
 		<p>France 🇫🇷</p>
 	</div>
 	<div>
-		<Button href="mailto:anatole.duf@gmail.com">Contact me</Button>
+		<Button class="flex flex-row items-center gap-2" {onclick}>
+			<Download class="size-5" /> Download CV
+		</Button>
 	</div>
-	<div class="flex flex-row gap-8">
+	<div class="flex flex-row items-center gap-8">
 		<Link href="https://github.com/Konixy">
-			<GitHubLogo class="size-5" />
+			<SiGithub size={20} />
 		</Link>
 		<Link href="https://linkedin.com/in/anatole-dufour/">
-			<LinkedInLogo class="size-5" />
+			<LinkedinLogo class="size-5" />
 		</Link>
 		<Link href="https://x.com/anatoleduf">
-			<XformerlyTwitterLogo class="size-4" />
+			<SiX size={18} />
 		</Link>
 		<Link href="https://instagram.com/anatole.music">
-			<InstagramLogo class="size-5" />
+			<SiInstagram size={18} />
 		</Link>
+	</div>
+	<div>
+		<button
+			onclick={() => {
+				window.scrollTo({
+					top: window.innerHeight,
+					behavior: 'smooth'
+				});
+			}}
+			class="group text-foreground/30 hover:text-foreground/60 absolute -bottom-20 left-1/2 -translate-x-1/2 cursor-pointer transition-all"
+		>
+			<IconChevronsDown
+				class="size-6 transition-transform duration-300 group-hover:translate-y-1"
+			/>
+		</button>
 	</div>
 </div>
 
-<Bento repoCount={data.repoCount} />
+<Projects repoCount={data.repoCount} />

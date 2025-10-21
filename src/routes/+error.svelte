@@ -1,5 +1,4 @@
 <script>
-import Aurora from '$lib/components/aurora.svelte';
 import Button from '$lib/components/button.svelte';
 </script>
 
