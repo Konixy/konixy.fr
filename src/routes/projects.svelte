@@ -311,7 +311,7 @@ function getLanguageIcon(language: Language) {
 						href={project.link}
 						target={project.external ? '_blank' : undefined}
 						rel={project.external ? 'noreferrer noopener' : undefined}
-						class="group bg-foreground/5 border-foreground/10 hover:bg-foreground/10 relative flex flex-col gap-4 rounded-3xl border p-6 shadow-[0_18px_40px_-35px_rgba(15,23,42,0.6)] transition-all hover:shadow-[0_30px_60px_-45px_rgba(15,23,42,0.7)] md:pl-24"
+						class="group bg-foreground/5 border-foreground/10 hover:bg-foreground/10 relative flex flex-col gap-4 rounded-3xl border p-6 shadow-[0_18px_40px_-35px_rgba(15,23,42,0.6)] transition-[shadow] hover:shadow-[0_30px_60px_-45px_rgba(15,23,42,0.7)] md:pl-24"
 					>
 						<div
 							class="bg-foreground/20 text-foreground/60 group-hover:text-foreground/80 absolute top-6 left-6 hidden size-12 items-center justify-center rounded-full text-base transition-all md:flex"
